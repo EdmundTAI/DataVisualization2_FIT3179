@@ -1,0 +1,43 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/EdmundTAI/DataVisualization2_FIT3179/main/data/BARPLOT.csv"
+    },
+    "width": "container",
+    "mark": {
+      "type": "bar",
+      "tooltip": true
+    },
+    "encoding": {
+      "x": {
+        "field": "Continent",
+        "type": "nominal",
+        "title": "Continent"
+      },
+      "y": {
+        "field": "MotalityRate",
+        "aggregate": "mean",
+        "title": "Crude Motality Rate (Percentage)"
+      },
+      "color": {
+        "field": "Continent",
+        "type": "nominal",
+        "legend": {
+          "orient": "left",
+          "offset": 10
+          },
+        "title": "Continent",
+        "scale": {
+          "range": [
+            "#6B07A2",
+            "#73069A",
+            "#BD1845",
+            "#5C3BEC",
+            "#211F90",
+            "#B69677"
+          ]
+        }
+      }
+    },
+    "config": {}
+  }

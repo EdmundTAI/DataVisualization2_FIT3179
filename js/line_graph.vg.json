@@ -1,30 +1,39 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "data": {
-      "url": "https://raw.githubusercontent.com/EdmundTAI/DataVisualization2_FIT3179/main/data/FINALLINECHART.csv"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/EdmundTAI/DataVisualization2_FIT3179/main/data/FINALLINECHART.csv"
+  },
+  "width": "container",
+  "mark": {
+    "type": "line",
+    "interpolate": "monotone",
+    "tooltip": true
+  },
+  "encoding": {
+    "x": {
+      "field": "Date_reported",
+      "timeUnit": "year",
+      "title":null
     },
-    "width": "container",
-    "mark": {
-      "type": "line",
-      "interpolate": "monotone"
+    "y": {
+      "field": "Infection_fatility_rate(percentage)",
+      "aggregate": "mean",
+      "title": "Infection Fatality Rate (Percentage)"
     },
-    "encoding": {
-      "x": {
-        "field": "Date_reported",
-        "timeUnit": "year",
-        "title":null
-      },
-      "y": {
-        "field": "Infection_fatility_rate(percentage)",
-        "aggregate": "mean",
-        "title": "Infection Fatality Rate (Percentage)"
-      },
-      "color": {
-        "type": "nominal",
-        "field": "Continent",
-        "title": "Continent",
-        "legend":{"orient": "none", "legendX":350, "legendY":10}
-      }
-    },
-    "config": {}
-  }
+    "color": {
+      "type": "nominal",
+      "field": "Continent",
+      "title": "Continent",
+      "scale": {
+      "range": [
+        "#D81B60",
+        "#1E88E5",
+        "#FFC107",
+        "#004D40",
+        "#A3594C"
+      ]},
+      "legend":{"orient": "none", "legendX":350, "legendY":10}
+    }
+  },
+  "config": {}
+}

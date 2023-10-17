@@ -24,12 +24,22 @@
 
 <body>
   
-  <div id="choropleth_map"></div>
+  <!-- <div id="choropleth_map"></div> -->
 
   <script type="text/javascript">
 
     var spec = "js/choropleth_map.vg.json";
     vegaEmbed('#choropleth_map', spec).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    var spec1 = "js/bar_graph.vg.json";
+    vegaEmbed('#bar_graph', spec).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    var spec2 = "js/line_graph.vg.json";
+    vegaEmbed('#line_graph', spec).then(function(result) {
       // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
     }).catch(console.error);
   </script>
